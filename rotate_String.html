@@ -7,16 +7,20 @@
     <title>Document</title>
 </head>
 
-<body onload="animate_string('target')">
+<body onload="animate_string('target1')">
     <pre id="target">Hello Golam Rabby</pre>
+    <h1 id="target1">hello</h1>
 </body>
 <script>
-    function animate_string(id) {
+    const animate_string = (id) => {
         let element = document.getElementById(id);
         let textNode = element.childNodes[0];
+        console.log(textNode);
         let text = textNode.data;
+        console.log("...", text);
 
         setInterval(function () {
+            console.log("...", text);
             text = text[text.length - 1] + text.substring(0, text.length - 1);
             textNode.data = text;
         }, 1000);
